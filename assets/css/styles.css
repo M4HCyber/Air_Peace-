@@ -1,0 +1,596 @@
+:root {
+    /*Colors*/
+    --white: hsl(0, 0%, 100%);
+    --blue: hsl(214, 91%, 31%);
+    --light-blue: hsl(214, 83%, 56%);
+    --background-blue: linear-gradient(#074799 65%, #fff);
+    --btn-border-blue:hsl(210, 10%, 33%);
+    --neutral-dark-blue: hsl(212, 14%, 22%);
+    --neutral-dark-blue50: hsl(210, 10%, 50%);
+    --neutral-blue: hsl(201, 11%, 66%);
+    /* Typhography */
+    --fs-h1: 65px;
+    --fs-h2: 35px;
+    --fs-h3: 23px;
+    --fs-p-lg: 24px;
+    --fs-p-md: 18px;
+    --fs-p-sm: 16px;
+    --fs-btn: 18px;
+
+    --font-family: "Bai Jamjuree", sans-serif;
+    --section-padding: 50px;
+
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--background-blue);
+    height: 100vh;
+    color: var(--white);
+    position: relative;
+}
+html{
+    font-family: var(--font-family);
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--fs-p-md);
+}
+
+:is(h1, h2, h3) {
+    color: var(--white);
+    margin: 10px 0;
+}
+
+ul li {
+    display: inline-block;
+    color: var(--white);
+    margin-right: 40px;
+}
+
+header {
+    padding: var(--section-padding);
+}
+
+nav {
+   display: grid;
+   grid-template-columns: 1fr 2fr 1fr;
+   justify-content: space-between;
+   text-align: center;
+}
+
+.bars {
+    display: none;
+}
+
+.logo-group {
+    display: flex;
+    gap: 0 5px;
+}
+.logo-group .logo-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    border-top: 4px solid var(--white);
+    transform: rotate(30deg);
+    animation: rotateLogo 2s infinite linear;
+}
+
+
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-group i {
+    font-size: 2.5rem;
+    position: absolute;
+    left: 50px;
+    color: white;
+}
+
+.logo-group .brand-name {
+    font-family: 'Rubik Mono One';
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.logo-group p:not(.brand-name) {
+    font-size: 12px;
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+    transition: 0.25s ease-in-out;
+    text-align: center;
+
+}
+
+.btn-primary {
+    border: 2px solid var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn:focus {
+    outline: 2px dotted var(--white);
+    outline-offset: 5px;
+}
+
+.hero {
+    width: 100%;
+    text-align: center;
+    font-size: var(--fs-p-lg);
+}
+
+
+
+.hero h1 {
+    font-size: var(--fs-h1);
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeSlideIn 1s forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 0;
+    }
+}
+section {
+    padding: 200px 50px;
+
+}
+
+.circle {
+    width: 1400px;
+    height: 600px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    padding: 10px;
+    top: 70%;
+    overflow: visible;
+}
+
+.circle1 {
+    left: -20%;
+}
+
+.circle2 {
+    right: -20%;
+}
+
+.circle1::before {
+    content: " ";
+    width: 1400px;
+    height: 600px;
+    z-index: -1;
+    position: absolute;
+    top: -2%;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+}
+
+
+.circle1::before, .circle1::after {
+    content: " ";
+    width: 1400px;
+    height: 600px;
+    position: absolute;
+    border-radius: 50%;
+}
+.circle1::before {
+    z-index: -1;
+    top: -2%;
+    background-color: var(--light-blue);
+}
+.circle1::after {
+    z-index: -3;
+    top: -4%;
+    background-color: var(--white);
+}
+
+.circle2::before, .circle2::after {
+    content: " ";
+    width: 1400px;
+    height: 600px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle2::after {
+    z-index: -3;
+    top: -5%;
+    background-color: var(--white);
+}
+
+.circle2::before {
+    z-index: -1;
+    top: -3%;
+    background-color: var(--light-blue);
+}
+
+.btn-group1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.book {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner-section {
+    position: relative;
+    z-index: 99;
+}
+.book .btn {
+    border: 1px solid var(--neutral-dark-blue);
+    border-radius: 20px;
+    margin-right: 20px;
+    color: var(--neutral-dark-blue);
+    font-size: var(--fs-p-sm);
+}
+
+.book .selected {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+}
+
+form fieldset {
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 1px solid var(--blue);
+    color: black;
+}
+
+
+fieldset label {
+    font-size: var(--fs-p-md);
+    margin-right: 30px;
+}
+
+.selection-desc {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 0 5rem;
+   color: var(--neutral-dark-blue);
+}
+
+.selection1{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    position: relative;
+}
+
+.selection2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 0px;
+    position: relative;
+}
+
+
+.selection-desc input, select{
+    width: 90%;
+    outline: none;
+    border: 1px solid var(--neutral-dark-blue);
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.selection-desc input {
+    padding: 15px;
+}
+
+select {
+    padding: 5px 15px;  
+}
+
+.switch {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--neutral-dark-blue);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .selection1 .switch { 
+    top: 43%;
+    right: 49%;
+}
+
+.selection2 .switch {
+    top: 43%;
+    left: 44%;
+}
+
+.airplane {
+    margin-bottom: -150px;
+}
+.airplane-head {
+    max-width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #ffffff, #d9d9d9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.cockpit {
+    width: 150px;
+    height: 40px;
+    z-index: 20;
+    position: absolute;
+    top: 30%;
+    background: linear-gradient(#414040, #878585);
+    border-radius: 5px;
+    clip-path: polygon(10% 100%, 90% 100%, 100% 60%, 85% 0%, 15% 0%, 0% 60%);
+}
+
+
+.airplane-top-pillar, .airplane-left-pillar, .airplane-right-pillar{
+    width: 200px;
+    height: 15px;
+    background: linear-gradient(#ffffff, #d9d9d9);
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.airplane-top-pillar {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.airplane-left-pillar {
+    transform: rotate(25deg) skew(10deg, 0);
+    right: 150px;
+    top: 0;
+}
+
+.airplane-right-pillar {
+    transform: rotate(-25deg) skew(-10deg, 0);
+    left: 150px;
+    top: 0;
+}
+
+
+/* Design for Different Screen Sizes */
+/*---------*/
+/* For 1200px and below */
+/*---------*/
+@media screen and (max-width: 1200px){
+    nav {
+        grid-template-columns: 1fr 2fr;       
+     }
+
+    nav .btn-group {
+    grid-column: span 2;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-left: 20px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .selection1 .switch { 
+        right: 47%;
+    }
+    
+    .selection2 .switch {
+        left: 42%;
+    }
+}
+
+
+/*---------*/
+/* For 996px and below */
+/*---------*/
+
+@media screen and (max-width: 996px){
+    .book {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .logo-group .brand-name {
+        font-size: 1rem;
+    }
+    .logo-group {
+        gap: 0 10px;
+    }
+    .logo-group i {
+        left: 50px;
+        color: white;
+    }
+
+    .selection-desc {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0 5rem;
+        color: var(--neutral-dark-blue);
+     }
+
+     .switch {
+        display: none;
+     }
+
+     select, input {
+        padding: 20px;
+        margin: 10px 0;
+     }
+   
+}
+
+/*---------*/
+/* For 800px and below */
+/*---------*/
+
+@media screen and (max-width: 800px){
+
+    :root {
+        /* Typhography */
+        --fs-h1: 50px;
+        }
+
+   nav {
+    grid-template-columns: 1fr 1fr;
+   }
+    .nav-links {
+    width: 500px;
+    background-color: var(--white);
+    grid-column: span 2;
+    position: absolute;
+    right: 0;
+    top: 15%;
+    place-content: center;
+    z-index: 1000;
+
+
+   }
+    ul li {
+    display: block;
+    padding: 20px;
+    place-items: center;
+   }
+
+   ul {
+    display: none;
+   }
+
+   ul li a {
+    color: var(--neutral-dark-blue);
+   }
+
+   ul li a:hover {
+    color: var(--blue);
+   }
+
+   .btn-group {
+    margin-top: 20px;
+   }
+
+    .bars {
+    display: block;
+    position: absolute;
+    right: 8%;
+    top: -60px;
+    font-size: 30px;
+
+}
+
+    .bars a {
+        font-size: var(--fs-h1)
+    }
+   .nav-links:hover ul{
+        display: block;
+    }
+
+    .selection1, .selection2 {
+        display: block;
+    }
+    
+    .btn-group1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .btn-group1 .btn:nth-of-type(3) {
+        grid-column: span 2;
+    }
+
+    .btn-group2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .selection-section p {
+        display: none;
+    }
+  }
+
+/*---------*/
+/* For 567px(Mobile) and below */
+/*---------*/
+@media screen and (max-width: 567px){
+    :root {
+    /* Typhography */
+    --fs-h1: 42px;
+    --fs-p-lg: 18px;
+    --fs-p-md: 14px;
+    --fs-p-sm: 12px;
+    --fs-btn: 14px;
+
+    --font-family: "Bai Jamjuree", sans-serif;
+    --section-padding: 50px;
+    }
+    
+.logo-group .brand-name {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+.logo-group {
+    gap: 0 5px;
+    width: 200px;
+}
+
+.logo-group p:not(.brand-name) {
+    font-size: 10px;
+}
+   
+}
+
+.clear {
+    width: 100%;
+    height: 450px;
+    background-color: white;
+    position: absolute;
+    bottom: -90%;
+    left: 0;
+}
